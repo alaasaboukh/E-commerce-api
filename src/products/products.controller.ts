@@ -25,8 +25,8 @@ import { UpdateProductDto } from "./dto/update.product.dto";
 @Controller('products')
 export class ProductsController{
   constructor(private readonly ProductsService:ProductsService){}
-@RolesDecorator(['admin' , 'user'])
-  @UseGuards(UsersGuard)
+// @RolesDecorator(['admin' , 'user'])
+  // @UseGuards(UsersGuard)
   @Get()
   getUsers(
     @Query('page') page = 1,
@@ -38,8 +38,8 @@ export class ProductsController{
       throw new HttpException(error, HttpStatus.BAD_REQUEST);
     }
   }
-  @RolesDecorator(['admin','user'])
-  @UseGuards(UsersGuard)
+  // @RolesDecorator(['admin','user'])
+  // @UseGuards(UsersGuard)
   @Get(':id')
   getUser(@Param('id') id: string): Promise<ResponseShape> {
     try {

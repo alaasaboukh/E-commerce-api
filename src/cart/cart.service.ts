@@ -101,11 +101,13 @@ export class CartService {
       );
 
       if (existingItemIndex > -1) {
-        // Update the quantity and total of the existing item
-        cart.items[existingItemIndex].quantity += cartItem.quantity;
-        cart.items[existingItemIndex].total = 
-          cart.items[existingItemIndex].price * cart.items[existingItemIndex].quantity;
-      } else {
+        // ✅ المنتج موجود بالفعل في السلة
+        // ❌ مش هنزود الكمية
+        return {
+          success: false,
+          message: 'Item already exists in cart',
+          data: cart
+        }} else {
         // Add the new item to the cart
         const itemTotal = cartItem.price * cartItem.quantity;
         cart.items.push({

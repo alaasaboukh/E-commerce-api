@@ -1,6 +1,6 @@
 @authToken =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWUwNDQwODVlNTNlZTc2NTM1YThkNSIsImVtYWlsIjoibW9oYW1lZGVsZ2VkYXd5NDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ2OTA3MDc5fQ.wd_ddTA94dMvNCSc3F-MoZJ4EI0tl-vxp67xSEI_xrU
-@productId = 681e3216044e89fe50d03297
-@userId = 681e044085e53ee76535a8d5
+@productId = 6861b42a7dfcad6269bf95f9
+@userId = 682434920da7b15b97752227
 
 ### Get User's Cart
 GET http://localhost:8008/api/cart?userId={{userId}}

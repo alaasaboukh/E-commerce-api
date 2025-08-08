@@ -1,1 +1,50 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWUwNDQwODVlNTNlZTc2NTM1YThkNSIsImVtYWlsIjoibW9oYW1lZGVsZ2VkYXd5NDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ2OTA3MDc5fQ.wd_ddTA94dMvNCSc3F-MoZJ4EI0tl-vxp67xSEI_xrU
+@userId = 681e044085e53ee76535a8d5
+@orderId = 64cf8123b312e43f5c2157aa 
+### 🧾 Get All Orders
 GET http://localhost:8008/api/orders
+Authorization: Bearer {{authToken}}
+
+### 📦 Get Orders By User
+GET http://localhost:8008/api/orders/user/{{userId}}
+Authorization: Bearer {{authToken}}
+### Create New Order
+POST http://localhost:8008/api/orders
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "userId": "{{userId}}",
+  "items": [
+    {
+      "productId": "6861b42a7dfcad6269bf95f9",
+      "name": "Sample Product",
+      "price": 29.99,
+      "quantity": 2
+    }
+  ],
+  "totalPrice": 59.98,
+  "status": "completed",
+  "shippingAddress": {
+    "fullName": "Mohamed Elgedawy",
+    "city": "Cairo",
+    "street": "Street 123",
+    "postalCode": "12345",
+    "country": "Egypt"
+  }
+}
+
+
+
+### ✏️ Update Order Status
+PUT http://localhost:8008/api/orders/{{orderId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "status": "shipped"
+}
+
+### ❌ Delete Order
+DELETE http://localhost:8008/api/orders/{{orderId}}
+Authorization: Bearer {{authToken}}

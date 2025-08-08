@@ -36,7 +36,7 @@ export class UsersController {
       throw new HttpException(error, HttpStatus.BAD_REQUEST);
     }
   }
-  @RolesDecorator(['admin'])
+  @RolesDecorator(['admin', 'user'])
   @UseGuards(UsersGuard)
   @Get(':id')
   getUser(@Param('id') id: string): Promise<ResponseShape> {
@@ -66,7 +66,7 @@ export class UsersController {
       );
     }
   }
-  @RolesDecorator(['admin'])
+  @RolesDecorator(['admin', 'user'])
   @UseGuards(UsersGuard)
   @Patch(':id')
   async updateUser(

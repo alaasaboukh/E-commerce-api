@@ -10,8 +10,8 @@ import { CreateCategoryDto } from "./dto/create.category.dto";
 export class CategoriesController{
   constructor(private readonly CategoriesService:CategoriesService){}
 
-  @RolesDecorator(['admin' , 'user'])
-    @UseGuards(UsersGuard)
+  // @RolesDecorator(['admin' , 'user'])
+    // @UseGuards(UsersGuard)
     @Get()
     getUsers(
       @Query('page') page = 1,
